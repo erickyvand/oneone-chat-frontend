@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { signupAction } from '../../redux/actions/authAction';
 
 const Signup = () => {
@@ -47,7 +47,6 @@ const Signup = () => {
 	}
 
 	const handleSumit = e => {
-		e.preventDefault();
 		dispatch(signupAction({ fullName, email, password }));
 	};
 
@@ -58,13 +57,14 @@ const Signup = () => {
 	});
 
 	return (
-		<div id='container'>
-			<form className='form' onSubmit={handleSumit}>
+		<div id='auth-container'>
+			<form className='form'>
 				{signup.error && <span className='error'>{signup.error}</span>}
 				<h1>Sign up</h1>
 				<input
 					type='text'
 					name='fullName'
+					data-test='fullName'
 					placeholder='Full Name'
 					onChange={e => setFullName(e.target.value)}
 				/>
@@ -72,6 +72,7 @@ const Signup = () => {
 				<input
 					type='text'
 					name='email'
+					data-test='email'
 					placeholder='Email'
 					onChange={e => setEmail(e.target.value)}
 				/>
@@ -79,6 +80,7 @@ const Signup = () => {
 				<input
 					type='password'
 					name='password'
+					data-test='password'
 					placeholder='Password'
 					onChange={e => setPassword(e.target.value)}
 				/>
@@ -86,16 +88,33 @@ const Signup = () => {
 				<br />
 				<input
 					type='submit'
-					value='Sign up'
+					data-test='signup-button'
+					value={signup.loading ? 'Processing...' : 'Sign up'}
+					onClick={handleSumit}
 					className={
-						!fullName || !email || !password || nameErr || emailErr || passErr
+						!fullName ||
+						!email ||
+						!password ||
+						nameErr ||
+						emailErr ||
+						passErr ||
+						signup.loading
 							? 'btn-disabled'
 							: 'btn'
 					}
 					disabled={
-						!fullName || !email || !password || nameErr || emailErr || passErr
+						!fullName ||
+						!email ||
+						!password ||
+						nameErr ||
+						emailErr ||
+						passErr ||
+						signup.loading
 					}
 				/>
+				<div className='text-info'>
+					Already have an account? <Link to='/login'>Login</Link>
+				</div>
 			</form>
 		</div>
 	);
