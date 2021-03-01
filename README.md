@@ -1,73 +1,48 @@
 [![Build Status](https://travis-ci.com/erickyvand/oneone-chat-frontend.svg?branch=main)](https://travis-ci.com/erickyvand/oneone-chat-frontend)
 [![Coverage Status](https://coveralls.io/repos/github/erickyvand/oneone-chat-frontend/badge.svg?branch=main)](https://coveralls.io/github/erickyvand/oneone-chat-frontend?branch=main)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/65fa3a27-098a-487f-8edc-1a82e0f651ab/deploy-status)](https://app.netlify.com/sites/fervent-carson-ea033f/deploys)
 
-# Getting Started with Create React App
+# One to one chat application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The real time chat application.
 
-## Available Scripts
+- Click [oneonechat](https://oneonechat.netlify.app/).
 
-In the project directory, you can run:
+# Get started locally
 
-### `yarn start`
+In order to test this application locally you must have:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- NodeJs
+- Postgres
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+How to start?
 
-### `yarn test`
+- Open terminal on your computer
+- Clone the backend repos with this command `git clone https://github.com/erickyvand/oneone-chat-backend.git`
+- cd to the project directory
+- Run `npm install` to install all dependences
+- Run `npm run dev:server` to start the server
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Open a new terminal on your computer
+- Clone this repos with `git clone https://github.com/erickyvand/oneone-chat-frontend.git`
+- Run `npm install` to install all dependences
+- Run `npm start` and a new tab should open on your default browser.
 
-### `yarn build`
+# Relevant screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Signup form](./public/signup.png 'Signup')
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Login form](./public/login.png 'Login')
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Chat box](./public/chat-box.png 'Chat box')
 
-### `yarn eject`
+# Technology used
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React/Redux
+- Socket.io client
+- HTML5
+- CSS3
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Contributor
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Iragena Eric (Ericky Vand)
