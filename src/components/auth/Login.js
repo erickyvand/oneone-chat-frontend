@@ -11,7 +11,6 @@ const Login = () => {
 	const login = useSelector(state => state.login);
 
 	let emailErr;
-	let passErr;
 
 	if (email === '') {
 		emailErr = 'Email is not allowed to be empty';
@@ -40,12 +39,17 @@ const Login = () => {
 	return (
 		<div id='auth-container'>
 			<form className='form'>
-				{login.error && <span className='error'>{login.error}</span>}
+				{login.error && (
+					<span className='error' data-test='error'>
+						{login.error}
+					</span>
+				)}
 				<h1>Login</h1>
 				<input
 					type='text'
 					name='email'
 					placeholder='Email'
+					data-test='email'
 					onChange={e => setEmail(e.target.value)}
 				/>
 				{emailErr && <span className='error'>{emailErr}</span>}
@@ -53,9 +57,9 @@ const Login = () => {
 					type='password'
 					name='password'
 					placeholder='Password'
+					data-test='password'
 					onChange={e => setPassword(e.target.value)}
 				/>
-				{passErr && <span className='error'>{passErr}</span>}
 				<br />
 				<input
 					data-test='login-button'

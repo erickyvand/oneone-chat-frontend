@@ -35,61 +35,61 @@ const Thread = ({ receiverId, messages }) => {
 
 	return (
 		<div className='cell-list'>
-			{thread.length === 0
-				? ''
-				: thread.map(message => {
-						const user = users.find(user => user.id === receiverId);
+			{receiverId === undefined ? (
+				<em className='Wlc-msg'>Chat messages will be shown here</em>
+			) : thread.length === 0 ? (
+				<em className='Wlc-msg'>You have not started any conversation yet!</em>
+			) : (
+				thread.map(message => {
+					const user = users.find(user => user.id === receiverId);
 
-						if (user !== undefined && message.senderid === user.id) {
-							return (
-								<div key={message.id} className='float-left'>
-									<h6 className='users-title'>{user.fullname}</h6>
-									<p className='bg-left text-white border-left-radius'>
-										{message.message}
-										<br />
-										<small>
-											{moment(message.createdat).calendar({
-												sameDay: `[${moment(message.createdat).format(
-													'HH:mm'
-												)}]`,
-												lastWeek: `[${moment(message.createdat).format(
-													'Do MMM YYYY HH:mm'
-												)}]`,
-												sameElse: `[${moment(message.createdat).format(
-													'Do MMM YYYY HH:mm'
-												)}]`,
-											})}
-										</small>
-									</p>
-								</div>
-							);
-						} else {
-							return (
-								<div key={message.id} className='float-right'>
-									<h6 className='users-title users-title-right'>
-										{sessionStorage.getItem('fullname')}
-									</h6>
-									<p className='bg-right border-right-radius'>
-										{message.message}
-										<br />
-										<small>
-											{moment(message.createdat).calendar({
-												sameDay: `[${moment(message.createdat).format(
-													'HH:mm'
-												)}]`,
-												lastWeek: `[${moment(message.createdat).format(
-													'Do MMM YYYY HH:mm'
-												)}]`,
-												sameElse: `[${moment(message.createdat).format(
-													'Do MMM YYYY HH:mm'
-												)}]`,
-											})}
-										</small>
-									</p>
-								</div>
-							);
-						}
-				  })}
+					if (user !== undefined && message.senderid === user.id) {
+						return (
+							<div key={message.id} className='float-left'>
+								<h6 className='users-title'>{user.fullname}</h6>
+								<p className='bg-left text-white border-left-radius'>
+									{message.message}
+									<br />
+									<small>
+										{moment(message.createdat).calendar({
+											sameDay: `[${moment(message.createdat).format('HH:mm')}]`,
+											lastWeek: `[${moment(message.createdat).format(
+												'Do MMM YYYY HH:mm'
+											)}]`,
+											sameElse: `[${moment(message.createdat).format(
+												'Do MMM YYYY HH:mm'
+											)}]`,
+										})}
+									</small>
+								</p>
+							</div>
+						);
+					} else {
+						return (
+							<div key={message.id} className='float-right'>
+								<h6 className='users-title users-title-right'>
+									{sessionStorage.getItem('fullname')}
+								</h6>
+								<p className='bg-right border-right-radius'>
+									{message.message}
+									<br />
+									<small>
+										{moment(message.createdat).calendar({
+											sameDay: `[${moment(message.createdat).format('HH:mm')}]`,
+											lastWeek: `[${moment(message.createdat).format(
+												'Do MMM YYYY HH:mm'
+											)}]`,
+											sameElse: `[${moment(message.createdat).format(
+												'Do MMM YYYY HH:mm'
+											)}]`,
+										})}
+									</small>
+								</p>
+							</div>
+						);
+					}
+				})
+			)}
 			<div ref={messagesEnd}></div>
 		</div>
 	);

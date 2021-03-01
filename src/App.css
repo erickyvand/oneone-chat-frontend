@@ -289,6 +289,15 @@ input[type='password']:focus {
 	color: #3e3f3f;
 }
 
+.Wlc-msg {
+	color: #fff;
+	text-align: center;
+	font-size: large;
+	margin-top: 150px;
+	font-weight: normal;
+	display: block;
+}
+
 @media screen and (max-width: 760px) {
 	#auth-container {
 		width: 100%;

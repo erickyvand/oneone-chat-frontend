@@ -49,7 +49,7 @@ function App() {
 	return (
 		<Router>
 			<Provider store={store}>
-				{sessionStorage.getItem('token') ? <NavBar /> : ''}
+				<NavBar token={sessionStorage.getItem('token')} />
 				<Switch>
 					<Route path='/' exact component={Signup} />
 					<Route
