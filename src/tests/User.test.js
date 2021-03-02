@@ -22,11 +22,6 @@ describe('Testing functionality', () => {
 			</Router>
 		</Provider>
 	);
-	it('should signup a user', done => {
-		const form = wrapper.find('[data-test="user-button"]');
-		expect(form).toBeDefined();
-		done();
-	});
 
 	it('Should wait for an action to get users', done => {
 		const action = {

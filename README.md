@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/erickyvand/oneone-chat-frontend.svg?branch=main)](https://travis-ci.com/erickyvand/oneone-chat-frontend)
-[![Coverage Status](https://coveralls.io/repos/github/erickyvand/oneone-chat-frontend/badge.svg?branch=main)](https://coveralls.io/github/erickyvand/oneone-chat-frontend?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/erickyvand/oneone-chat-frontend/badge.svg?branch=main)](https://coveralls.io/github/erickyvand/oneone-chat-frontend?branch=main&service=github)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/65fa3a27-098a-487f-8edc-1a82e0f651ab/deploy-status)](https://app.netlify.com/sites/fervent-carson-ea033f/deploys)
 
 # One to one chat application
